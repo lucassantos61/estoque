@@ -24,5 +24,19 @@
 		if($produtos)
  			return view('produtos.detalhes')->withDetalhes($produtos[0]);	
 		return view('error.404');
- 	}
+	 }
+	 
+	 public function novo(){
+		 return view('formulario');
+	 }
+
+	 public function adiciona(){
+		$nome = Request::input('nome');
+		$quantidade =  Request::input('quantidade');
+		$valor = Request::input('valor');
+		$descricao = Request::input('descricao');
+
+		
+die($nome);
+	 }
  } 	
