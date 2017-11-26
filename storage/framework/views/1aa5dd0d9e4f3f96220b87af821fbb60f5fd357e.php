@@ -24,5 +24,10 @@
 		Um ou menos itens no estoque
 	</span>
 </h4>
+<?php if(old('nome')): ?>
+	<div class="alert alert-success">
+    Produto <?php echo e(old('nome')); ?> adicionado com sucesso
+    </div>
+<?php endif; ?>
 <?php $__env->stopSection(); ?> 
 <?php echo $__env->make('layout.principal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

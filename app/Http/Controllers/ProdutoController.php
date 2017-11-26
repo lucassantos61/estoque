@@ -27,7 +27,7 @@
 	 }
 	 
 	 public function novo(){
-		 return view('formulario');
+		return view('produtos.formulario');
 	 }
 
 	 public function adiciona(){
@@ -35,8 +35,15 @@
 		$quantidade =  Request::input('quantidade');
 		$valor = Request::input('valor');
 		$descricao = Request::input('descricao');
-
 		
-die($nome);
+			if(DB::insert('insert into produtos values (null, ?, ?, ?, ?)',
+			array($nome,$valor,$descricao,$quantidade))){
+				return redirect('/produtos')->withInput(Request::only('nome'));
+			}
+
+	 }
+	 public function returnJson(){
+		 $produtos = DB::select('select * from produtos');
+		 return response()->json($produtos);
 	 }
  } 	
