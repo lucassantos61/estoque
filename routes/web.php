@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 Route::get('/produtos','ProdutoController@lista');
 Route::get('/produtos/mostra/{id}','ProdutoController@mostra')->where('id','[0-9]+');
+Route::get('/produtos/remove/{id}','ProdutoController@remove')->where('id','[0-9]+');
 Route::get('/produtos/novo','ProdutoController@novo');
+Route::get('/produtos/edita/{id}','ProdutoController@edita')->where('id','[0-9]+');
 Route::post('/produtos/adiciona','ProdutoController@adiciona');
+Route::post('/produtos/atualiza/{id}','ProdutoController@atualiza')->where('id','[0-9]+');
 Route::get('/produtos/json','ProdutoController@returnJson');

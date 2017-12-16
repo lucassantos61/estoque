@@ -14,9 +14,16 @@
 			<td>{{$p->nome}}</td>
 			<td>{{$p->valor}}</td>
 			<td>{{$p->descricao or 'Não há descrição'}}</td>
+			<td>{{$p->tamanho}}</td>
 			<td>{{$p->quantidade}}</td>
 			<td>
 				<a href="/produtos/mostra/{{$p->id}}"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+			</td>
+			<td>
+				<a href="/produtos/remove/{{$p->id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+			</td>
+			<td>
+				<a href="/produtos/edita/{{$p->id}}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
 			</td>
 		</tr>
 		@endforeach
@@ -27,6 +34,7 @@
 		Um ou menos itens no estoque
 	</span>
 </h4>
+
 @if(old('nome'))
 	<div class="alert alert-success">
     Produto {{old('nome')}} adicionado com sucesso
