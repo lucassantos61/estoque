@@ -5,14 +5,17 @@
 namespace estoque\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Validator;
 use Request;
 use estoque\Produto;
+use estoque\Http\Requests\ProdutoRequest;
 class ProdutoController extends Controller
  {
  	
  	public function lista(){
 
- 		$produtos = Produto::all();;	 
+ 		$produtos = Produto::all();
+
  		if (view()->exists('produtos.listagem')){
  			return view('produtos.listagem')->withProdutos($produtos);
  			}
@@ -30,14 +33,12 @@ class ProdutoController extends Controller
 		return view('produtos.formulario');
 	 }
 
-	 public function adiciona(){
+	 public function adiciona(ProdutoRequest $request){
 		// $params = Request::all();
 		// $produto = new Produto($params);
 
-			if(Produto::create(Request::all())){
-				return redirect('/produtos')->withInput(Request::only('nome'));
-			}
-
+	 	Produto::create($request->all());
+	 	return redirect('/produtos')->withInput();
 	 }
 	 public function remove($id){
 		$produto = Produto::find($id);
