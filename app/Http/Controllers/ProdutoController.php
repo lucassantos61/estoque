@@ -9,17 +9,23 @@ use Validator;
 use Request;
 use estoque\Produto;
 use estoque\Http\Requests\ProdutoRequest;
+
 class ProdutoController extends Controller
  {
+ 	public function __construct(){
+
+ 	  $this->middleware('autorizador');
+ 	}
  	
  	public function lista(){
 
  		$produtos = Produto::all();
-
- 		if (view()->exists('produtos.listagem')){
+ 		
+ 			if (view()->exists('produtos.listagem')){
  			return view('produtos.listagem')->withProdutos($produtos);
  			}
- 			return view('error.404');
+ 			return view('error.404');	
+ 			
  	}
  		
 	public function mostra($id){
