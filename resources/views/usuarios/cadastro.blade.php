@@ -15,15 +15,15 @@
 <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
   <div class="form-group">
     <label>Nome</label>
-    <input name="name" class="form-control" required/>
+    <input name="name" class="form-control" required placeholder="Nome" />
   </div>
   <div class="form-group">
     <label>Email</label>
-    <input name="email" class="form-control" required/>
+    <input name="email" class="form-control" required placeholder="exemplo@exemplo.com.br" />
   </div>
   <div class="form-group">
     <label>Senha</label>
-    <input name="password" class="form-control" type="password" required/>
+    <input name="password" class="form-control" type="password" required placeholder="******" />
   </div>
   <button type="submit" 
     class="btn btn-primary btn-block">Submit</button>

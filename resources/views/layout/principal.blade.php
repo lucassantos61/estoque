@@ -31,7 +31,7 @@
 	</nav>
 	@yield('conteudo')
 	<footer class="footer">
-		<p>Curso Alura</p>
+		<p>Controle de estoque</p>
 	</footer>
 	</div>
 </body>
