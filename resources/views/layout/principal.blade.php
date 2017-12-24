@@ -21,7 +21,7 @@
 				<li><a class ="teste" href="/produtos/novo">Novo</a></li>
 				  @if (Auth::guest())
 				    <li><a href="/login">Login</a></li>
-				    <li><a href="/register">Register</a></li>
+				    <li><a href="/register">Registrar</a></li>
 				  @else
 				    <li>{{ Auth::user()->name }} </li>
 				    <li><a href="/logout">Logout</a></li>
