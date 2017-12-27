@@ -18,16 +18,16 @@ class LoginController extends Controller
     public function login(){
     $credenciais = Request::only('email','password');
 
-     if(!Auth::attempt(['email' => $credenciais['email'], 'password' => $credenciais['password']])) {
-        return "Usuário ". 
-            Auth::user()->name 
-            ." logado com sucesso";
-            }
-            return 'Não Logou';
+     if(Auth::attempt($credenciais)) {
+        return redirect()->action('ProdutoController@lista');
      }
+     $message = 'Verifique o usuário ou senha';
+     return view('form_login')->withInfo($message);
+    }
 
     public function logout(){
         Auth::logout();
-    	return'deslogou';
+        $message = 'Deslogado';
+        return view('form_login')->withInfo($message);
     }
 }
