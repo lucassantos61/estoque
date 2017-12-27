@@ -17,6 +17,7 @@
 			<td>{{$p->descricao or 'Não há descrição'}}</td>
 			<td>{{$p->tamanho}}</td>
 			<td>{{$p->quantidade}}</td>
+			<td>{{$p->categoria->nome}}</td>
 			<td>
 				<a href="/produtos/mostra/{{$p->id}}"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
 			</td>
