@@ -1,7 +1,12 @@
 @extends('layout.principal')
 
 @section('conteudo')
-
+@if(isset($info))
+<div class ="alert alert-danger">
+        {{$info}}
+</div>
+@endif
+{{isset($p)?$p->nome:old('nome')}}
 <form action="/login" method="post">
 <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
   <div class="form-group">
