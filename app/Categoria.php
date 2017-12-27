@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Categoria extends Model
 {
     public function produtos(){
-        $this-hasMany('estoque\Produto');
+       return $this-hasMany('estoque\Produto');
     }
 }

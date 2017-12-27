@@ -12,7 +12,7 @@ class Produto extends Model
     protected $fillable  = array('nome','descricao','quantidade','valor','tamanho','categoria_id');
     
      public function categoria(){
-         $this->belongTo('estoque\Categoria');
+        return $this->belongsTo('estoque\Categoria');
      }
 
 }
