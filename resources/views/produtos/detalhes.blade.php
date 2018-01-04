@@ -13,6 +13,9 @@
 			<li>
 				<b>Qauntidade: </b>{{$detalhes->quantidade}}
 			</li>
+			<li>
+				<b>Categoria: </b>{{$detalhes->categoria->nome}}
+			</li>
 		</ul>
 	</table>
 @stop
