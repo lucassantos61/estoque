@@ -24,9 +24,6 @@
 			<td>
 				<a href="/produtos/remove/{{$p->id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 			</td>
-			<td>
-				<a href="/produtos/edita/{{$p->id}}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-			</td>
 		</tr>
 		@endforeach
 	</table>
